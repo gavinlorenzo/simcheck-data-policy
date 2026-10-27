@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Data Policy · Tellbloom</title>
+  <meta name="description" content="How Tellbloom, Inc. handles client content in its simulator QA service: no model training, no reuse, deletion within 30 days.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f6f4ef;
+      --card: #fffefb;
+      --ink: #1f1d1a;
+      --muted: #645f57;
+      --line: #e3ded4;
+      --head: #f1ede5;
+      --link: #1d5aa8;
+      --notice: #e9f2ea;
+      --notice-line: #4c7a55;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161513;
+        --card: #1f1e1b;
+        --ink: #ece9e3;
+        --muted: #a9a399;
+        --line: #36332e;
+        --head: #2a2824;
+        --link: #8ab6f0;
+        --notice: #1f2b21;
+        --notice-line: #77a982;
+      }
+    }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      padding: 32px 16px 48px;
+    }
+    main {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin: 0 auto;
+      max-width: 820px;
+      padding: 32px 28px 36px;
+    }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin-bottom: 6px; }
+    h2 { font-size: 1.15rem; line-height: 1.3; margin: 30px 0 10px; }
+    p, li, td, th { font-size: 0.97rem; }
+    p + p { margin-top: 10px; }
+    ul { margin: 10px 0 0 22px; }
+    li + li { margin-top: 6px; }
+    a { color: var(--link); }
+    .meta { color: var(--muted); margin-bottom: 22px; }
+    .summary {
+      background: var(--notice);
+      border-left: 4px solid var(--notice-line);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .summary ul { margin-top: 8px; }
+    .table-wrap { overflow-x: auto; margin-top: 12px; }
+    table { border-collapse: collapse; width: 100%; min-width: 520px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: var(--head); font-weight: 600; }
+    footer { color: var(--muted); font-size: 0.88rem; margin-top: 32px; }
+    @media (max-width: 560px) { main { padding: 24px 18px 28px; } h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Client Data Policy</h1>
+  <p class="meta">Tellbloom, Inc. · Simulator QA service · Effective October 27, 2026</p>
+
+  <div class="summary">
+    <strong>In short</strong>
+    <ul>
+      <li>Your content is never used to train AI models, either by us or by the AI providers we use.</li>
+      <li>Your content is never reused in work for anyone else, and never sold, published or used in marketing.</li>
+      <li>We delete our copies within 30 days of delivering the work, or sooner if you ask.</li>
+      <li>Only the providers named on this page receive your content, and only to do the work.</li>
+    </ul>
+  </div>
+
+  <h2>1. What this policy covers</h2>
+  <p>Tellbloom tests and reviews AI roleplay training simulators for business customers (each a "Customer"). This policy describes how we handle <strong>Client Content</strong>: simulator configuration and prompts, test conversation transcripts, evaluations and scores, documents a Customer gives us for the work, and the reports we produce from them. It includes any material in that content that came from the Customer's own clients.</p>
+  <p>This policy adds to any confidentiality or non-disclosure agreement between Tellbloom and a Customer. Where the two differ, the agreement governs.</p>
+
+  <h2>2. How Client Content is processed</h2>
+  <ul>
+    <li><strong>The Customer's simulator platform.</strong> We run test conversations inside the Customer's own simulator platform (for example, Cicero), using access the Customer grants. Content held there remains under the Customer's own agreement with that platform.</li>
+    <li><strong>Our computer.</strong> Our QA software runs on a computer controlled by Tellbloom. Client Content is stored there in a folder that is kept outside any cloud-synced folder and excluded from source control. It is never committed to a code repository.</li>
+    <li><strong>AI providers.</strong> Our software sends Client Content to the AI providers below to play the trainee in test conversations, review transcripts against the Customer's standards, and edit report wording. Model training on our content is turned off on both of our accounts. Each request starts a new, standalone session with no saved conversation history and no memory features, so content from one job is not available in another.</li>
+  </ul>
+
+  <h2>3. Who receives Client Content</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>Used for</th><th>Training</th><th>Provider's policy</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OpenAI (ChatGPT / Codex)</td>
+          <td>Playing the trainee in test conversations; reviewing transcripts and configuration</td>
+          <td>Turned off on our account</td>
+          <td><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance">How data is used</a> · <a href="https://openai.com/policies/privacy-policy/">Privacy policy</a></td>
+        </tr>
+        <tr>
+          <td>Anthropic (Claude)</td>
+          <td>Editing the wording of report summaries</td>
+          <td>Turned off on our account</td>
+          <td><a href="https://www.anthropic.com/legal/privacy">Privacy policy</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Each provider keeps request data for a limited time for safety, abuse monitoring and legal compliance, as its own policy describes. We will tell the Customer before an AI provider that receives Client Content is added or replaced.</p>
+
+  <h2>4. What we never do</h2>
+  <ul>
+    <li>Use Client Content to train or fine-tune any AI model, or let a provider do so.</li>
+    <li>Use one Customer's content in work for another Customer, or build shared knowledge from it.</li>
+    <li>Sell Client Content, or use it for advertising.</li>
+    <li>Publish it, or show it in marketing, case studies or demonstrations without the Customer's written permission.</li>
+    <li>Share it with anyone beyond the providers listed above and the people working on the engagement.</li>
+  </ul>
+
+  <h2>5. Retention and deletion</h2>
+  <ul>
+    <li>Our copies of Client Content are deleted once they have gone 30 days without use. That means no later than 30 days after we deliver the work they supported.</li>
+    <li>The Customer can ask us to delete its content sooner, at any time.</li>
+    <li>The Customer's QA standards and checklists, which every test run needs, are kept for the length of the engagement and deleted when it ends.</li>
+    <li>We keep a minimal run record with no content (identifiers, timestamps and trial counts) to enforce agreed run limits and for billing.</li>
+    <li>Delivered reports belong to the Customer. Our copy is deleted under the same 30-day rule.</li>
+    <li>Test conversations held in the Customer's simulator platform stay in the Customer's account, under the Customer's control.</li>
+    <li>Copies held by AI providers are deleted on each provider's own schedule.</li>
+  </ul>
+
+  <h2>6. Access and security</h2>
+  <ul>
+    <li>Only Tellbloom staff working on the engagement can access Client Content.</li>
+    <li>Passwords and access credentials are never stored in source control.</li>
+    <li>If a security incident affects Client Content, we will notify the Customer without undue delay.</li>
+  </ul>
+
+  <h2>7. Changes and contact</h2>
+  <p>If this policy changes, the new version will be posted here with a new effective date, and current Customers will be told before the change applies to their content.</p>
+  <p>Questions or deletion requests: <a href="mailto:hello@tellbloom.ai">hello@tellbloom.ai</a></p>
+
+  <footer>Tellbloom, Inc.</footer>
+</main>
+</body>
+</html>
